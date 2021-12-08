@@ -1,10 +1,11 @@
-//https://blog.ktbyte.com/fisica-platformer-part-1/
 import fisica.*;
 
 FWorld world;
 FBox platform;
-FBox player;
-FBox player2;
+FBox proj_1;
+FBox proj_2;
+FBox box_1;
+FBox box_2;
 
 boolean left, right, onGround;
 
@@ -19,14 +20,20 @@ void setup() {
   platform.setPosition(width/2, height * 0.8);
   platform.setStatic(true);
   
-  player = new FBox(30,30);
-  player.setPosition(width / 2, height / 8);
-  player2 = new FBox(30,30);
-  player2.setPosition(width / 2, height / 8);
+  proj_1 = new FBox(30,30);
+  proj_1.setPosition((4 * width) / 6, height / 8);
+  proj_2 = new FBox(30,30);
+  proj_2.setPosition((6 * width) / 7, height / 8);
+  box_1 = new FBox(30,80);
+  box_1.setPosition(width / 4, height * 0.6);
+  box_2 = new FBox(100,70);
+  box_2.setPosition(width / 4, height * 0.5);
   
   world.add(platform);
-  world.add(player);
-  world.add(player2);
+  world.add(proj_1);
+  world.add(proj_2);
+  world.add(box_1);
+  world.add(box_2);
 }
 
 void draw() {
